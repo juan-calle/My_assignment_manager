@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+
+/*Genreal aesthecic styling*/
+.color1{
+	background-color:#3b85f0;
+}
+.color2{
+	color:white;
+}
+.color3{
+	background-color:ebebeb;
+}
+.btn, .btn-primary{
+	background-color:#9de342;
+}
+.narrower{
+	height:2em;
+}
+.shorter{
+	width: 30%;
+}
+.marginTop{
+	margin-top:20px;
+}
+.over{
+	position:absolute;
+}
+
+.block{
+	display:block
+}
+
+.alignLeft{
+	position:relative;
+	text-align:left;
+}
+.alignRight{
+	position:relative;
+	text-align:right;
+}
+
+.block{
+	display:block;
+	position:relative;
+	margin:auto;
+}
+
+#image{
+	display:fixed;
+	margin: 0px auto;
+}
+#header{
+	background-color:#f7f7f7;
+}

@@ -1,0 +1,344 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.10
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost:8889
+-- Generation Time: May 13, 2015 at 06:48 PM
+-- Server version: 5.5.38
+-- PHP Version: 5.6.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `saeDB`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assignment`
+--
+
+CREATE TABLE `assignment` (
+`assignment_id` smallint(4) unsigned zerofill NOT NULL,
+  `assignment_name` varchar(45) NOT NULL,
+  `dateTime_due` datetime DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `assignment`
+--
+
+INSERT INTO `assignment` (`assignment_id`, `assignment_name`, `dateTime_due`) VALUES
+(0001, 'Website Proposal', '2015-05-17 18:00:00'),
+(0002, 'Website Project', NULL),
+(0003, 'Form Validation', NULL),
+(0004, 'Image Gallery', NULL),
+(0005, 'Art Movement Based Layout', NULL),
+(0006, 'Usability Report', '2015-05-17 00:00:00'),
+(0007, 'Dynamic Website Proposal', '2015-05-31 00:00:00'),
+(0008, 'Dynamic Website Project', '2015-05-16 00:00:00'),
+(0009, 'Animated Logo', '2015-05-27 00:00:00'),
+(0010, 'Interactive Banner', '2015-05-20 00:00:00'),
+(0011, 'Flash Website', '2015-05-28 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `module`
+--
+
+CREATE TABLE `module` (
+`module_id` smallint(3) unsigned zerofill NOT NULL,
+  `module_name` varchar(256) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=403 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `module`
+--
+
+INSERT INTO `module` (`module_id`, `module_name`) VALUES
+(401, 'Introduction to Scripting, Programming, Interface Design and Communication'),
+(402, 'Key Technologies for Interaction');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `module_unit`
+--
+
+CREATE TABLE `module_unit` (
+  `module_id` smallint(3) unsigned zerofill NOT NULL,
+  `unit_id` smallint(3) unsigned zerofill NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `module_unit`
+--
+
+INSERT INTO `module_unit` (`module_id`, `unit_id`) VALUES
+(401, 001),
+(401, 002),
+(401, 003),
+(402, 004),
+(402, 005),
+(402, 006);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_assignment_mark`
+--
+
+CREATE TABLE `student_assignment_mark` (
+  `student_id` smallint(5) unsigned zerofill NOT NULL,
+  `assignment_id` smallint(4) unsigned zerofill NOT NULL,
+  `dateTime_uploaded` datetime DEFAULT NULL,
+  `path` varchar(256) DEFAULT NULL,
+  `mark` tinyint(2) unsigned DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `student_assignment_mark`
+--
+
+INSERT INTO `student_assignment_mark` (`student_id`, `assignment_id`, `dateTime_uploaded`, `path`, `mark`) VALUES
+(00001, 0006, '2015-05-11 11:53:04', NULL, 4),
+(00001, 0007, '2015-05-11 11:53:41', NULL, 5),
+(00001, 0008, NULL, NULL, 6),
+(00001, 0009, '2015-05-11 11:46:12', NULL, 7),
+(00001, 0010, NULL, NULL, 8),
+(00001, 0011, NULL, NULL, 9),
+(00005, 0006, '2015-05-13 13:30:37', NULL, 10),
+(00005, 0007, '2015-05-13 13:30:52', NULL, 9),
+(00005, 0008, '2015-05-13 13:32:12', NULL, 8),
+(00005, 0009, NULL, NULL, 7),
+(00005, 0010, NULL, NULL, 6),
+(00005, 0011, NULL, NULL, 5),
+(00008, 0006, NULL, NULL, 4),
+(00008, 0007, NULL, NULL, 3),
+(00008, 0008, NULL, NULL, 2),
+(00008, 0009, NULL, NULL, 1),
+(00008, 0010, NULL, NULL, 2),
+(00008, 0011, NULL, NULL, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_module_mark`
+--
+
+CREATE TABLE `student_module_mark` (
+  `student_id` smallint(5) unsigned zerofill NOT NULL,
+  `module_id` smallint(3) unsigned zerofill NOT NULL,
+  `module_mark` tinyint(2) unsigned DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `student_module_mark`
+--
+
+INSERT INTO `student_module_mark` (`student_id`, `module_id`, `module_mark`) VALUES
+(00001, 402, NULL),
+(00005, 402, NULL),
+(00008, 402, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unit`
+--
+
+CREATE TABLE `unit` (
+`unit_id` smallint(3) unsigned zerofill NOT NULL,
+  `unit_name` varchar(256) NOT NULL,
+  `teacher_id` smallint(5) unsigned zerofill NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `unit`
+--
+
+INSERT INTO `unit` (`unit_id`, `unit_name`, `teacher_id`) VALUES
+(001, 'HTML/CSS', 00002),
+(002, 'Intro to Javascript', 00007),
+(003, 'Principles of Design', 00002),
+(004, 'Human Computer Interaction', 00002),
+(005, 'PHP/MySQL', 00003),
+(006, 'Intro to Flash', 00006);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unit_assignment`
+--
+
+CREATE TABLE `unit_assignment` (
+  `unit_id` smallint(3) unsigned zerofill NOT NULL,
+  `assignment_id` smallint(4) unsigned zerofill NOT NULL,
+  `teacher_id` smallint(5) unsigned zerofill NOT NULL,
+  `unit_name` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `unit_assignment`
+--
+
+INSERT INTO `unit_assignment` (`unit_id`, `assignment_id`, `teacher_id`, `unit_name`) VALUES
+(001, 0001, 00002, 'HTML/CSS'),
+(001, 0002, 00002, 'HTML/CSS'),
+(002, 0003, 00007, 'Intro to Javascript'),
+(002, 0004, 00007, 'Intro to Javascript'),
+(003, 0005, 00002, 'Principles of Design'),
+(004, 0006, 00002, 'Human Computer Interaction'),
+(005, 0007, 00003, 'PHP/MySQL'),
+(005, 0008, 00003, 'PHP/MySQL'),
+(006, 0009, 00006, 'Intro to Flash'),
+(006, 0010, 00006, 'Intro to Flash'),
+(006, 0011, 00006, 'Intro to Flash');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+`user_id` smallint(5) unsigned zerofill NOT NULL,
+  `user_type` tinyint(1) unsigned NOT NULL,
+  `first_name` varchar(45) NOT NULL,
+  `middle_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) NOT NULL,
+  `user_email` varchar(45) NOT NULL,
+  `user_password` varchar(256) DEFAULT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_type`, `first_name`, `middle_name`, `last_name`, `user_email`, `user_password`, `active`) VALUES
+(00001, 0, 'Juan', 'Carlos', 'Munoz', 'juancmcalle@gmail.com', '12345678', 1),
+(00002, 1, 'Itai', NULL, 'Bercovier', 'i.bercovier@sae.edu', NULL, 1),
+(00003, 1, 'Subrata', NULL, 'Chakraborty', 's.chakraborty@sae.edu', '12345678', 1),
+(00004, 2, 'Rose', NULL, 'Cavendish', 'r.cavendish@sae.edu', NULL, 0),
+(00005, 0, 'Vladi', NULL, 'Shylock', 'v.shylock@sae.edu', NULL, 1),
+(00006, 1, 'John', NULL, 'Kennedy', 'johnskennedy@gmail.com', NULL, 0),
+(00007, 1, 'Pete', NULL, 'Croaker', 'p.croaker@sae.edu', NULL, 0),
+(00008, 0, 'Umar', NULL, 'Shahid', 'u.shahid@sae.edu', NULL, 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `assignment`
+--
+ALTER TABLE `assignment`
+ ADD PRIMARY KEY (`assignment_id`);
+
+--
+-- Indexes for table `module`
+--
+ALTER TABLE `module`
+ ADD PRIMARY KEY (`module_id`);
+
+--
+-- Indexes for table `module_unit`
+--
+ALTER TABLE `module_unit`
+ ADD PRIMARY KEY (`module_id`,`unit_id`), ADD KEY `unit_id` (`unit_id`);
+
+--
+-- Indexes for table `student_assignment_mark`
+--
+ALTER TABLE `student_assignment_mark`
+ ADD PRIMARY KEY (`student_id`,`assignment_id`), ADD KEY `assignment_id` (`assignment_id`);
+
+--
+-- Indexes for table `student_module_mark`
+--
+ALTER TABLE `student_module_mark`
+ ADD PRIMARY KEY (`student_id`,`module_id`), ADD KEY `module_id` (`module_id`);
+
+--
+-- Indexes for table `unit`
+--
+ALTER TABLE `unit`
+ ADD PRIMARY KEY (`unit_id`), ADD KEY `teacher_id` (`teacher_id`) COMMENT 'teacher_id makes reference to user_id (primary key in user table)';
+
+--
+-- Indexes for table `unit_assignment`
+--
+ALTER TABLE `unit_assignment`
+ ADD PRIMARY KEY (`unit_id`,`assignment_id`), ADD KEY `assignment_id` (`assignment_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+ ADD PRIMARY KEY (`user_id`), ADD UNIQUE KEY `user_email` (`user_email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `assignment`
+--
+ALTER TABLE `assignment`
+MODIFY `assignment_id` smallint(4) unsigned zerofill NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `module`
+--
+ALTER TABLE `module`
+MODIFY `module_id` smallint(3) unsigned zerofill NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=403;
+--
+-- AUTO_INCREMENT for table `unit`
+--
+ALTER TABLE `unit`
+MODIFY `unit_id` smallint(3) unsigned zerofill NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+MODIFY `user_id` smallint(5) unsigned zerofill NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `module_unit`
+--
+ALTER TABLE `module_unit`
+ADD CONSTRAINT `module_unit_ibfk_1` FOREIGN KEY (`module_id`) REFERENCES `module` (`module_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `module_unit_ibfk_2` FOREIGN KEY (`unit_id`) REFERENCES `unit` (`unit_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `student_assignment_mark`
+--
+ALTER TABLE `student_assignment_mark`
+ADD CONSTRAINT `student_assignment_mark_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `student_assignment_mark_ibfk_2` FOREIGN KEY (`assignment_id`) REFERENCES `assignment` (`assignment_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `student_module_mark`
+--
+ALTER TABLE `student_module_mark`
+ADD CONSTRAINT `student_module_mark_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `student_module_mark_ibfk_2` FOREIGN KEY (`module_id`) REFERENCES `module` (`module_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `unit`
+--
+ALTER TABLE `unit`
+ADD CONSTRAINT `unit_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `unit_assignment`
+--
+ALTER TABLE `unit_assignment`
+ADD CONSTRAINT `unit_assignment_ibfk_1` FOREIGN KEY (`unit_id`) REFERENCES `unit` (`unit_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+ADD CONSTRAINT `unit_assignment_ibfk_2` FOREIGN KEY (`assignment_id`) REFERENCES `assignment` (`assignment_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
