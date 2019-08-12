@@ -18,12 +18,12 @@ printNavBar($userData["user_type"], "My Marks");
         <div class="col-md-2 col-lg-2"></div>
         <div class="col-md-8 col-lg-8 text-center color3 well">
             <h1>Create a new Deadline:</h1>
-            <p class="alignLeft"> Choose a module: 
+            <p class="alignLeft"> Choose a module:
             <select name="module">
               <option value="401">401</option>
               <option value="402">402</option>
-            </select>    
-         	</p>    
+            </select>
+         	</p>
             <p class="alignLeft"> Choose a unit:
             <select name="unit">
               <option value="001">HTML/CSS</option>
@@ -32,22 +32,22 @@ printNavBar($userData["user_type"], "My Marks");
               <option value="004">Human Computer Interaction</option>
               <option value="005">PHP/MySQL</option>
               <option value="002">Intro to flash</option>
-            </select>   
+            </select>
             </p>
-            <p class="alignLeft"> Choose an assignment: 
+            <p class="alignLeft"> Choose an assignment:
             <select name="assignment">
-              <option value="0001">HTML/CSS</option>
-              <option value="0002">Intro to Javascript</option>
-              <option value="0003">Principles of Design</option>
-              <option value="0004">Human Computer Interaction</option>
-              <option value="0005">PHP/MySQL</option>
-              <option value="0006">HTML/CSS</option>
-              <option value="0007">Intro to Javascript</option>
-              <option value="0008">Principles of Design</option>
-              <option value="0009">Human Computer Interaction</option>
-              <option value="0010">PHP/MySQL</option>
-              <option value="0011">Intro to flash</option>
-            </select>   
+              <option value="0001">Website Proposal</option>
+              <option value="0002">Website Project</option>
+              <option value="0003">Form Validation</option>
+              <option value="0004">Image Gallery</option>
+              <option value="0005">Art Movement Based Layout</option>
+              <option value="0006">Usability Report</option>
+              <option value="0007">Dynamic Website Proposal</option>
+              <option value="0008">Dynamic Website Project</option>
+              <option value="0009">Animated Logo</option>
+              <option value="0010">Interactive Banner</option>
+              <option value="0011">Flash Website</option>
+            </select>
             </p>
             <p class="alignLeft"> Choose a date and a time: </p>
             <div class="container-fluid">
@@ -75,7 +75,7 @@ printNavBar($userData["user_type"], "My Marks");
               <option value="0900">09:00</option>
               <option value="1000">10:00</option>
               <option value="1100">11:00</option>
-              <option value="1200">12:00</option>                  
+              <option value="1200">12:00</option>
               <option value="1300">13:00</option>
               <option value="1400">14:00</option>
               <option value="1500">15:00</option>
@@ -87,7 +87,7 @@ printNavBar($userData["user_type"], "My Marks");
               <option value="2100">21:00</option>
               <option value="2200">22:00</option>
               <option value="2300">23:00</option>
-            </select>   
+            </select>
             </div>
 			</div>
            	<button class="btn btn-primary marginTop alignLeftt">Create!</button>
