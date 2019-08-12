@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: May 13, 2015 at 06:48 PM
+-- Generation Time: May 13, 2018 at 06:48 PM
 -- Server version: 5.5.38
 -- PHP Version: 5.6.2
 
@@ -11,7 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `saeDB`
+-- Database: `myDB`
 --
 
 -- --------------------------------------------------------
@@ -221,13 +221,13 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_type`, `first_name`, `middle_name`, `last_name`, `user_email`, `user_password`, `active`) VALUES
 (00001, 0, 'Juan', 'Carlos', 'Munoz', 'juancmcalle@gmail.com', '12345678', 1),
-(00002, 1, 'Itai', NULL, 'Bercovier', 'i.bercovier@sae.edu', NULL, 1),
-(00003, 1, 'Subrata', NULL, 'Chakraborty', 's.chakraborty@sae.edu', '12345678', 1),
-(00004, 2, 'Rose', NULL, 'Cavendish', 'r.cavendish@sae.edu', NULL, 0),
-(00005, 0, 'Vladi', NULL, 'Shylock', 'v.shylock@sae.edu', NULL, 1),
+(00002, 1, 'Itai', NULL, 'Bercovier', 'i.bercovier@gmail.edu', NULL, 1),
+(00003, 1, 'Subrata', NULL, 'Chakraborty', 's.chakraborty@gmail.com', '12345678', 1),
+(00004, 2, 'Rose', NULL, 'Cavendish', 'r.cavendish@gmail.com', NULL, 0),
+(00005, 0, 'Vladi', NULL, 'Shylock', 'v.shylock@gmail.com', NULL, 1),
 (00006, 1, 'John', NULL, 'Kennedy', 'johnskennedy@gmail.com', NULL, 0),
-(00007, 1, 'Pete', NULL, 'Croaker', 'p.croaker@sae.edu', NULL, 0),
-(00008, 0, 'Umar', NULL, 'Shahid', 'u.shahid@sae.edu', NULL, 0);
+(00007, 1, 'Pete', NULL, 'Croaker', 'p.croaker@gmail.com', NULL, 0),
+(00008, 0, 'Umar', NULL, 'Shahid', 'u.shahid@gmail.com', NULL, 0);
 
 --
 -- Indexes for dumped tables

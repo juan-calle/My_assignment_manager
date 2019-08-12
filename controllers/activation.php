@@ -25,7 +25,7 @@ printHeader('Activation');
     <div class="container-fluid">
     	<!--Button to go back to the login page-->
         <a href="../index.php"><button class="btn btn-primary over marginTop">Back to login!</button></a>
-        <img src="../assets/SAE.jpg" alt="SAE Institute Logo">
+        <img src="../assets/cover.jpg" alt="cover image">
     </div>
 </header>
 
@@ -40,46 +40,46 @@ printHeader('Activation');
     <section class="main row">
         <div class="col-md-4 col-lg-4"></div>
         <div class="col-md-4 col-lg-4 text-center">
-        
+
         <!--Creation of the form-->
         <form action="access.php" method="post" name="activationForm">
-        
+
         		<!--If there is a value for 'error' index of $_GET  and its value is 2, error() function, created in "outputs.php", is called and prints a div with error message-->
-				<?php 
+				<?php
                     switch ($error){
                         case 2:
                             echo error(ERROR2);
                         break;
-						
+
                         default:
-                        break;		
+                        break;
                     }
-					
+
                 ?>
-                
-                <label class="color2" for="name">ID Number:</label> 
+
+                <label class="color2" for="name">ID Number:</label>
                 <input class="form-control" id="idNumber" type="text"  placeholder="ID Number:" name="idNumber">
-                                
-                <label class="color2" for="email">Email:</label> 
+
+                <label class="color2" for="email">Email:</label>
                 <input class="form-control narrower" id="email" type="text" placeholder="Email:" name="email">
-            
-                <label class="color2" for="choosePasswword">Choose a password:</label> 
+
+                <label class="color2" for="choosePasswword">Choose a password:</label>
                 <input class="form-control narrower" id="choosePassword" type="password" placeholder="Choose a password:" name="choosePassword">
-                
-                <label class="color2" for="confirmPassword">Confirm your password:</label>                     
+
+                <label class="color2" for="confirmPassword">Confirm your password:</label>
                 <input class="form-control narrower" id="confirmPassword" type="password" placeholder="Confirm your password:" name="confirmPassword">
-                
+
                <div class="form-group marginTop">
                     <button class="btn btn-primary" type="button" onClick="activationValidated()">Go!</button>
                </div>
 
-        </form>          
+        </form>
         </div>
         <div class="col-md-4 col-lg-4"></div>
 
-    </section>      
+    </section>
 </div>
-     
+
 <?php
 
 // Prints the HTML footer

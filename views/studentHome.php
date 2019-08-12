@@ -3,12 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>SAE Assignment Manager - Profile</title>
+		<title>My Assignment Manager - Profile</title>
   		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/style.css">
 	</head>
 	<body class="color1">
-    
+
 		<header id="header">
         	<nav class="navbar navbar-inverse" role="navigation">
             	<div class="fluid-container">
@@ -23,9 +23,9 @@
                         <li><a href="#">Log Out</a></li>
 					</ul>
              	</div>
-          	</nav>        
+          	</nav>
    		</header>
-        
+
 		<div class="container">
        		<section class="row">
             	<div class="col-md-4 col-lg-4"></div>
@@ -41,7 +41,7 @@
                 		</div>
                  	</div>
             	<div class="col-md-4 col-lg-4"></div>
-        	</section>      
-        </div>    	
+        	</section>
+        </div>
 	</body>
 </html>
