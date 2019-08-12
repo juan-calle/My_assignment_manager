@@ -16,24 +16,24 @@ printNavBar($userData["user_type"], "My Modules");
 <div class="container">
     <section class="row">
         <div class="col-md-3 col-lg-3"></div>
-        <div class="col-md-6 col-lg-6 text-center color3 well marginTop">            
+        <div class="col-md-6 col-lg-6 text-center color3 well marginTop">
 			<?php
-			
+
                 // For each index of the array I give them a name $object
                 foreach($retrieveModulesData as $object){
-					
+
 						echo'
 						<div id="' . $object["module_id"] . '"class="panel panel-success marginTop">
 						  <div class="panel-body success">
 						  <p><h4>' . $object["module_id"] . '</h4></p>
-						  <p>' . $object["module_name"] . '</p> 
+						  <p>' . $object["module_name"] . '</p>
 						  </div>
-						  <div class="panel-footer alignLeft">
+						  <div class="panel-footer center">
 							<p><h4>' . $object["unit_name"] . '</h4></p>
-							
+
 						  </div> 
 					   </div>';
-	
+
 	      		}
 
 printFooter();
