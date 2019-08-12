@@ -47,6 +47,7 @@ switch($task){
 function showData($idNumber){
 
 	// This variable will hold the current hour in a 24h format HH:MM
+	date_default_timezone_set('Europe/London');
 	$currentHour = date("H:i");
 
 	// Creating a data base helper which is an instance of ProfileModel class
