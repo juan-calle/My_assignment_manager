@@ -1,5 +1,7 @@
 <?php
-// Project by Juan Carlos Munoz Calle - 2018
+// Project by Juan Carlos Munoz Calle.
+// London, UK, 2018
+
 
 /*** Index.php is the landing page of the site. It displays the login form and calls "access.php" controler upon form submition for it to manage the access of the user to the site***/
 
@@ -28,7 +30,7 @@ printHeader("Login");
 <!--The following block of code will display the welcome image-->
 <header id="header">
     <div class="container-fluid">
-        <img src="assets/cover.jpg" alt="Cover Image">
+        <img src="assets/cover.jpg" alt="cover image">
     </div>
 </header>
 

@@ -47,7 +47,6 @@ switch($task){
 function showData($idNumber){
 
 	// This variable will hold the current hour in a 24h format HH:MM
-	date_default_timezone_set('Europe/London');
 	$currentHour = date("H:i");
 
 	// Creating a data base helper which is an instance of ProfileModel class
@@ -88,7 +87,7 @@ function showData($idNumber){
 function uploadPic($idNumber){
 	$picName = $_FILES['picChange']['name'];
 	$tempName = $_FILES['picChange']['tmp_name'];
-	$rootPath = "http://localhost:8888/My_Assignment_manager/";
+	$rootPath = "http://localhost/My_Assignment_manager/";
 	$picsFolder = $_SERVER{'DOCUMENT_ROOT'}."/My_Assignment_manager/assets/userPics/";
 //	print_r($_FILES['picChange']);
 //	echo $_SERVER{'DOCUMENT_ROOT'}."/assets/userPics/";
