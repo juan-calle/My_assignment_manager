@@ -2,13 +2,13 @@
 /* This controller gathers a series of functions that will dinamically create the structure of the pages within the site (header, navigation bar, footer and errors) */
 
 
-// Create a variable that holds an absolute path to the site's folder
-// $rootPath = "http://localhost:8888/My_Assignment_manager/";
-
 
 /*** FUNCTION: printHeader(). This function, when called from a .php file will print the header. The variable $title will change according to what page the user is into. ***/
 function printHeader($title){
+
+	// Create a variable that holds an absolute path to the site's folder
 	$rootPath = "http://localhost:8888/My_Assignment_manager/";
+
 	// Echo the html code containing the header which will be the same through the site (excepting login and activation pages).
 	echo
 		'<!doctype html>
@@ -28,13 +28,16 @@ function printHeader($title){
 
 /*** FUNCTION: printFooterr(). This function, when called from a .php file will print the footer that contains the script links and closing of body and html document***/
 function printFooter(){
+
+	// Create a variable that holds an absolute path to the site's folder
 	$rootPath = "http://localhost:8888/My_Assignment_manager/";
+
 	// Echo the html code containing the footer and scripts.
 	echo
 	   '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	    <script src="'. $rootPath .'js/jsFunctions.js"></script>
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	    <script src="'. $rootPath .'js/jquery-ui.js"></script>
+	    <script src="../js/jquery-ui.js"></script>
 	</body>
 </html>';
 }
