@@ -1,0 +1,10 @@
+USER ID |         EMAIL             | PASSWORD |  ACCESS LEVEL | USER ACTIVE? |
+--------|---------------------------|----------|---------------|--------------|
+00001   | juancmcalle@gmail.com     | 12345678 |    Student    |      YES     |
+00002   | i.bercovier@gmail.com     | 12345678 |    Teacher    |      YES     |
+00003   | s.chakraborty@gmail.com   | NULL     |    Teacher    |      NO      |
+00004   | r.cavendish@gmail.com     | NULL     |    Student    |      NO      |
+00005   | v.shylock@gmail.com       | NULL     |    Student    |      NO      |
+00006   | johnskennedy@gmail.com    | NULL     |    Teacher    |      NO      |
+00007   | p.croaker@gmail.com       | NULL     |    Teacher    |      NO      |
+00008   | u.shahid@gmail.com        | NULL     |    Student    |      NO      |    
